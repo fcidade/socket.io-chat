@@ -16,6 +16,11 @@ io.on('connection', socket => {
         console.log('msg', msg)
         io.sockets.emit('chat message', msg);
     });
+
+    socket.on('catapimbas', value => {
+        console.log('recebi um catapimbas')
+        io.sockets.emit('chat message', 'catapimbas');
+    });
 });
 
 

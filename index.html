@@ -21,7 +21,6 @@
         </form>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
         <script>
-            (function(){
             const socket = io();
                 const userMessage = document.getElementById('m');
                 const messages = document.getElementById('messages');
@@ -39,7 +38,7 @@
                     messages.innerHTML += `<li>${msg}</li>`;
                     console.log('msg',msg);
                 });
-            })();
+            
         </script>
     </body>
 </html>
