@@ -23,22 +23,22 @@
         <script>
             (function(){
             const socket = io();
-            const userMessage = document.getElementById('m');
-            const messages = document.getElementById('messages');
-            
-            function sendMessage(e){
-                e.preventDefault();
-                socket.emit('chat message', userMessage.value);
-                userMessage.value = '';
-            }
+                const userMessage = document.getElementById('m');
+                const messages = document.getElementById('messages');
+                
+                function sendMessage(e){
+                    e.preventDefault();
+                    socket.emit('chat message', userMessage.value);
+                    userMessage.value = '';
+                }
 
-            const form = document.getElementById('form');
-            form.addEventListener('submit', sendMessage);
+                const form = document.getElementById('form');
+                form.addEventListener('submit', sendMessage);
 
-            socket.on('chat message', msg => {
-                messages.innerHTML += `<li>${msg}</li>`;
-                console.log('msg',msg);
-            });
+                socket.on('chat message', msg => {
+                    messages.innerHTML += `<li>${msg}</li>`;
+                    console.log('msg',msg);
+                });
             })();
         </script>
     </body>
